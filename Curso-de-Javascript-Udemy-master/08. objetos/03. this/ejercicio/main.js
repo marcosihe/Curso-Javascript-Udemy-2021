@@ -45,3 +45,24 @@ let tuit = {
 
 console.log(tuit.getLikes());
 console.log(tuit.getRT());
+
+//Call, apply & bind
+//this.name = 'George'; //'Descomentar para ver el comportamiento de la línea 63 (console.log(showInfo(12,13));)
+const user = {
+    name: 'Marcos'
+};
+
+const bussiness = {
+    name: 'Headbook'
+};
+
+function showInfo(likes, friends){
+    return `${this.name} tiene ${likes} likes y ${friends} amigos.`;
+}
+
+console.log(showInfo(12,13)); //showInfo no sabe a qué objeto hace referencia el this (globalmente no está definido 'name')
+console.log(showInfo.call(user, 45, 122));
+console.log(showInfo.apply(bussiness, [12, 141]));
+
+const newFunction = showInfo.bind(user); //bind pide un solo parámetro, que es el contexto para que la función 'newFunction' comprenda lo que es this
+console.log(newFunction(10,15));

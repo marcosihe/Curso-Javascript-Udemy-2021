@@ -27,7 +27,6 @@ nombre.addEventListener('input', e =>{
 
 
 //checkbox
-//const lenguajes = document.querySelectorAll('input[type=checkbox]:checked');
 const lenguajes = document.querySelectorAll('input[type=checkbox]');
 lenguajes.forEach(lenguaje =>{
     lenguaje.addEventListener('click', e =>{
